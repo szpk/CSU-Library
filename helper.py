@@ -110,7 +110,7 @@ class CSULibrary(object):
         now = datetime.now()
         targetTime = datetime(2022, 10, 30, 22, 0, 1)
         timedelta = (targetTime - now).seconds
-        if timedelta > 1800:
+        if timedelta > 2400:
            print("TIME OUT!")
         else:
            print("sleep  :"+str(timedelta))
