@@ -8,6 +8,8 @@ import requests
 import argparse
 import configparser
 import urllib.parse
+import time
+from datetime import datetime
 
 from bs4 import BeautifulSoup
 from Cryptodome.Cipher import AES
@@ -104,6 +106,15 @@ class CSULibrary(object):
 
         access_token = requests.utils.dict_from_cookiejar(self.client.cookies)[
             'access_token']
+        
+        now = datetime.now()
+       targetTime = datetime(2022, 10, 30, 22, 0, 1)
+       timedelta = (targetTime - now).seconds
+       if timedelta > 1800:
+           print("TIME OUT!")
+       else:
+           print("sleep  :"+str(timedelta))
+           time.sleep(timedelta)
 
         for i in range(0, len(self.seatid)):
             url = "http://libzw.csu.edu.cn/api.php/spaces/" + \
