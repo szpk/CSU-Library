@@ -108,9 +108,9 @@ class CSULibrary(object):
             'access_token']
         
         now = datetime.now()
-        targetTime = datetime(2022, 10, 30, 22, 0, 1)
+        targetTime = datetime(now.year, now.month, now.day, 22, 0, 1)
         timedelta = (targetTime - now).seconds
-        if timedelta > 2400:
+        if timedelta > 86400:
            print("TIME OUT!")
         else:
            print("sleep  :"+str(timedelta))
