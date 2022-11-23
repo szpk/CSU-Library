@@ -130,7 +130,9 @@ class CSULibrary(object):
                 'operateChannel': '2'
             }
             response = self.client.post(url, headers=headers, data=data)
+            print("Tried "+str(self.seatid[i])+".\n")
             if response.json()['status'] == 1:
+                print("Success!")
                 break
         
         logging.info(response.json()['msg'])
