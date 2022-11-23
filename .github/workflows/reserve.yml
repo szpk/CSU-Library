@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '36/2 21 * * *'
-    - cron: '00,02 22 * * *'
+    - cron: '25 21 * * *'
+    - cron: '29 21 * * *'
 
 jobs:
   reserve:
