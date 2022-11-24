@@ -56,7 +56,7 @@ class GetSeatInfo():
         return response.json()["data"]["list"][0]["id"], response.json()["data"]["list"][1]["id"]
 
 collector = GetSeatInfo()
-collector.get_seat_info(1, "./新校区座位表.csv") #新校区id为1
-collector.get_seat_info(28, "./铁道校区座位表.csv") #铁道校区id为28
-collector.get_seat_info(71, "./湘雅新校区座位表.csv") #湘雅新校区id为71
-collector.get_seat_info(94, "./本部校区座位表.csv") #本部校区id为94
+collector.get_seat_info(1, "./新校区座位表2.csv") #新校区id为1
+collector.get_seat_info(28, "./铁道校区座位表2.csv") #铁道校区id为28
+collector.get_seat_info(71, "./湘雅新校区座位表2.csv") #湘雅新校区id为71
+collector.get_seat_info(94, "./本部校区座位表2.csv") #本部校区id为94
