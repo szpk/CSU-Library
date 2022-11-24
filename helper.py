@@ -102,13 +102,23 @@ class CSULibrary(object):
         '''
         预约指定位置,返回结果消息
         '''
+        
+        now = datetime.now()
+        targetTime = datetime(now.year, now.month, now.day, 21, 55, 30)
+        timedelta = (targetTime - now).seconds
+        if timedelta > 2400:
+           print("TIME OUT!")
+        else:
+           print("sleep  :"+str(timedelta))
+           time.sleep(timedelta)
+        
         self.login()
 
         access_token = requests.utils.dict_from_cookiejar(self.client.cookies)[
             'access_token']
         
         now = datetime.now()
-        targetTime = datetime(now.year, now.month, now.day, 22, 0, 1)
+        targetTime = datetime(now.year, now.month, now.day, 22, 0, 0)
         timedelta = (targetTime - now).seconds
         if timedelta > 2400:
            print("TIME OUT!")
